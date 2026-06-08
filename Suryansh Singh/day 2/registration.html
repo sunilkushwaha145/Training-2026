@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <h1>Registration Page</h1>
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="about.html">About Me</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="registration.html">Registration</a> |
+        <a href="gallery.html">Gallery</a>
+    </nav>
+    <hr>
+    <form action="#">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your name"><br><br>
+            <label for="reg_email">Email:</label><br>
+            <input type="email" id="reg_email" name="reg_email" placeholder="Enter your email" required><br><br>
+            <label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br><br>
+            <label for="cpwd">Confirm Password:</label><br>
+            <input type="password" id="cpwd" name="cpwd" placeholder="Confirm your password" required><br><br>
+            <label for="reg_mobile">Mobile Number:</label><br>
+            <input type="tel" id="reg_mobile" name="reg_mobile" placeholder="Enter your mobile number"><br><br>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob"><br><br>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
+            <label>Hobbies:</label><br>
+            <input type="checkbox" id="coding" name="hobby" value="coding">
+            <label for="coding">Coding</label>
+            <input type="checkbox" id="music" name="hobby" value="music">
+            <label for="music">Music</label>
+            <input type="checkbox" id="sports" name="hobby" value="sports">
+            <label for="sports">Sports</label><br><br>
+            <label for="city">City:</label><br>
+            <select id="city" name="city">
+                <option value="lko">Lucknow</option>
+                <option value="azm">Azamgarh</option>
+                <option value="gkr">Gorakhpur</option>
+                <option value="nw">New Delhi</option>
+            </select><br><br>
+            <label for="profile_pic">Profile Picture:</label><br>
+            <input type="file" id="profile_pic" name="profile_pic"><br><br>
+            <label for="fav_color">Favorite Color:</label><br>
+            <input type="color" id="fav_color" name="fav_color"><br><br>
+            <label for="site_url">Website URL:</label><br>
+            <input type="url" id="site_url" name="site_url" placeholder="https://example.com"><br><br>
+            <label for="search_box">Search Box:</label><br>
+            <input type="search" id="search_box" name="search_box"><br><br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="1" max="100"><br><br>
+            <label for="reg_time">Preferred Contact Time:</label><br>
+            <input type="time" id="reg_time" name="reg_time"><br><br>
+            <label for="range_input">Skill Level (0 to 100):</label><br>
+            <input type="range" id="range_input" name="range_input" min="0" max="100"><br><br>
+            <label for="reg_message">Additional Message:</label><br>
+            <textarea id="reg_message" name="reg_message" rows="5" cols="40" placeholder="write your message here . . ."></textarea><br><br>
+            <input type="submit" value="Submit Registration">
+            <input type="reset" value="Reset Form">
+        </fieldset>
+    </form>
+    <br>
+    <hr>
+    <a href="home.html">Back to Home</a>
+</body>
+</html>

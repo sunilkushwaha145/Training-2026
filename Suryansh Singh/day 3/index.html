@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning CSS</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
+            color:#333;
+            text-align:center;
+            padding:20px;
+        }
+
+        header{
+            background:#1976d2;
+            color:white;
+            padding:25px;
+            border-radius:10px;
+            margin-bottom:20px;
+        }
+        nav{
+            margin:20px 0;
+        }
+        nav > a{
+            text-decoration:none;
+            background:#1976d2;
+            color:white;
+            padding:10px 15px;
+            margin:5px;
+            border-radius:5px;
+            display:inline-block;
+            transition:0.3s;
+        }
+        nav > a:hover{
+            background:#0d47a1;
+            transform:scale(1.05);
+        }
+        .container{
+            max-width:1000px;
+            margin:auto;
+        }
+        .card{
+            background:white;
+            padding:20px;
+            margin-top:20px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+        img{
+            width:350px;
+            max-width:100%;
+            border-radius:10px;
+            margin-top:15px;
+            box-shadow:0 4px 8px rgba(0,0,0,0.2);
+        }
+        h1{
+            margin-bottom:10px;
+        }
+        h2{
+            color:#1976d2;
+            margin-bottom:10px;
+        }
+        p{
+            line-height:1.8;
+            font-size:18px;
+        }
+        ol, ul{
+            text-align:left;
+            width:300px;
+            margin:15px auto;
+            font-size:17px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Learning CSS</h1>
+        <p>
+            Revising  HTML and leaning CSS practical way
+        </p>
+    </header>
+    <nav>
+        <a href="inlinecss.html">Inline CSS</a>
+        <a href="internalcss.html">Internal CSS</a>
+         <a href="externalcss.html">External CSS</a>
+         <a href="cssnotes.html">CSS Notes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>      
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>Introduction</h2>
+            <p>
+                This page is made for assignment giving by Sunil Sir
+            </p>
+            <img src="./image/cssimage.jpg" alt="CSS Learning">
+        </div>
+        <div class="card">
+            <h2>HTML Topics</h2>
+            <ol>
+                <li>Headings</li>
+                <li>Paragraphs</li>
+                <li>Images</li>
+                <li>Anchor Tags</li>
+                <li>Lists</li>
+                <li>Forms</li>
+                <li>Input Types</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h2>CSS Topics</h2>
+            <ul>
+                <li>Inline CSS</li>
+                <li>Internal CSS</li>
+                <li>External CSS</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
