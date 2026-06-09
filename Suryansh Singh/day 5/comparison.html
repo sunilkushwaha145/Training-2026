@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }        
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #667eea;
+        }        
+        nav > a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }        
+        nav a:hover {
+            color: #764ba2;
+        }        
+        .main-content {
+            padding: 40px 30px;
+        }        
+        .section {
+            margin-bottom: 50px;
+        }        
+        .section > h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .comparison-box {
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .comparison-item {
+            background: white;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 3px;
+        }        
+        .comparison-title {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }        
+        .output-box {
+            background: #e8f5e9;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }        
+        .explanation {
+            background: #fff9e6;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }        
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+        }        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }        
+        .feature {
+            font-weight: bold;
+            color: #667eea;
+            min-width: 120px;
+        }        
+        .bonus-badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: 0.3s;
+        }        
+        .back-btn:hover {
+            background: #764ba2;
+        }        
+        footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Comparison - Bonus Task (+20 Marks)</h1>
+        </header>
+        <nav>
+            <a href="tokens.html">Tokens</a>
+            <a href="keywords.html">Keywords</a>
+            <a href="datatypes.html">Data Types & Variables</a>
+            <a href="functions.html">Functions</a>
+            <a href="operators.html">Operators</a>
+            <a href="statements.html">Statements </a>
+            <a href="project.html">Mini Project</a>
+        </nav>
+        <div class="main-content">            
+            <div class="section">
+                <h2>var vs let vs const</h2>
+                <p style="margin-bottom: 20px;">
+                    Understanding the differences between variable declaration methods is crucial for modern JavaScript development.
+                </p>                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>var</th>
+                            <th>let</th>
+                            <th>const</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature">Scope</span></td>
+                            <td>Function-scoped</td>
+                            <td>Block-scoped</td>
+                            <td>Block-scoped</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Redeclarable</span></td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Reassignable</span></td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Hoisting</span></td>
+                            <td>Hoisted (undefined)</td>
+                            <td>Hoisted (TDZ)</td>
+                            <td>Hoisted (TDZ)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Modern Standard</span></td>
+                            <td>Outdated</td>
+                            <td>Recommended</td>
+                            <td>Recommended</td>
+                        </tr>
+                    </tbody>
+                </table>                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: var</div>
+                        <p>var is the original variable declaration keyword. It has function scope and can be redeclared.</p>
+                    </div>
+                    <div class="code-block">
+                        var name = "Suryansh";<br/>
+                        console.log(name); // John<br/>
+                        var name = "Suryansh"; // Redeclared<br/>
+                        console.log(name); // Jane
+                    </div>
+                    <div class="output-box">Output: Suryansh<br>Output: Suryansh</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> var allows redeclaration. The second var name declaration doesn't cause an error 
+                        and overwrites the first value. This flexibility can lead to bugs.
+                    </div>
+                </div>
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: let</div>
+                        <p>let is block-scoped and prevents redeclaration but allows reassignment. It's the modern standard.</p>
+                    </div>
+                    <div class="code-block">
+                        let age = 25;<br/>
+                        console.log(age); // 25<br/>
+                        age = 26; // Reassigned (allowed)<br/>
+                        console.log(age); // 26<br/>
+                        let age = 27; // Error: Identifier 'age' has already been declared
+                    </div>                    
+                    <div class="output-box">Output: 25<br>Output: 26<br>Error: Redeclaration not allowed</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> let prevents accidental redeclaration (safer) but you can update the value 
+                        through assignment. This is the preferred way to declare variables in modern JavaScript.
+                    </div>
+                </div>                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">📝 Definition: const</div>
+                        <p>const is block-scoped, prevents redeclaration AND reassignment. Use by default unless you need to change the value.</p>
+                    </div>                    
+                    <div class="code-block">
+                        const PI = 3.14159;<br/>
+                        console.log(PI); // 3.14159<br/>
+                        PI = 3.14; // Error: Assignment to constant variable<br/>
+                        const PI = 3.1; // Error: Identifier 'PI' has already been declared
+                    </div>                    
+                    <div class="output-box">Output: 3.14159<br>Error: Cannot reassign<br>Error: Cannot redeclare</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> const creates immutable variables. Once assigned, the value cannot change. 
+                        This is best for values that should remain constant throughout your program.
+                    </div>
+                </div>                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Block Scope Example</div>
+                    </div>                    
+                    <div class="code-block">
+                        function demo() {<br/>
+                            var x = 1;<br/>
+                            let y = 2;<br/>
+                            const z = 3;<br/>
+                            <br/>
+                            {<br/>
+                                var x = 10;   // Updates outer x<br/>
+                                let y = 20;   // New y in this block<br/>
+                                const z = 30; // New z in this block<br/>
+                            }<br/>
+                            <br/>
+                            console.log(x); // 10 (var is function-scoped)<br/>
+                            console.log(y); // 2 (let is block-scoped)<br/>
+                            console.log(z); // 3 (const is block-scoped)<br/>
+                        }
+                    </div>                    
+                    <div class="output-box">Output: 10<br>Output: 2<br>Output: 3</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> var is function-scoped, so the inner var x = 10 updates the outer x. 
+                        let and const are block-scoped, so the inner y and z are separate from the outer ones.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>== vs ===</h2>
+                <p style="margin-bottom: 20px;">
+                    Equality operators are fundamental. Understanding the difference prevents subtle bugs in your code.
+                </p>                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>== (Loose Equality)</th>
+                            <th>=== (Strict Equality)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature">Type Coercion</span></td>
+                            <td>Yes (converts types)</td>
+                            <td>No (no conversion)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Comparison</span></td>
+                            <td>Value only</td>
+                            <td>Value AND type</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Example</span></td>
+                            <td>5 == "5" → true</td>
+                            <td>5 === "5" → false</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Safety</span></td>
+                            <td>Unpredictable</td>
+                            <td>Predictable</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Best Practice</span></td>
+                            <td>Avoid</td>
+                            <td>Always use</td>
+                        </tr>
+                    </tbody>
+                </table>                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: ==</div>
+                        <p>Loose equality compares values after type conversion. Different types are converted to match.</p>
+                    </div>
+                    <div class="code-block">
+                        console.log(5 == "5");        // true (5 converted from string)<br/>
+                        console.log(0 == false);      // true (false converts to 0)<br/>
+                        console.log("" == false);     // true (both are falsy)<br/>
+                        console.log(null == undefined); // true (special case)<br/>
+                        console.log(1 == true);       // true (true converts to 1)
+                    </div>
+                    <div class="output-box">
+                        Output: true<br>
+                        Output: true<br>
+                        Output: true<br>
+                        Output: true<br>
+                        Output: true
+                    </div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> Loose equality performs type coercion. JavaScript converts types to make the comparison. 
+                        This can lead to unexpected results, which is why === is preferred.
+                    </div>
+                </div>
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: ===</div>
+                        <p>Strict equality compares both value and type. No type conversion happens.</p>
+                    </div>
+                    <div class="code-block">
+                        console.log(5 === "5");       // false (different types)<br/>
+                        console.log(0 === false);     // false (different types)<br/>
+                        console.log("" === false);    // false (different types)<br/>
+                        console.log(null === undefined); // false (different types)<br/>
+                        console.log(1 === true);      // false (different types)<br/>
+                        console.log(5 === 5);         // true (same value and type)
+                    </div>
+                    <div class="output-box">
+                        Output: false<br>
+                        Output: false<br>
+                        Output: false<br>
+                        Output: false<br>
+                        Output: false<br>
+                        Output: true
+                    </div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> Strict equality requires both value AND type to match. 
+                        5 and "5" are not equal because one is a number and the other is a string. This is safer and more predictable.
+                    </div>
+                </div>
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Real-World Example</div>
+                    </div>
+                    <div class="code-block">
+                        let userAge = "25";<br/>
+                        let minAge = 18;<br/>
+                        <br/>
+                        // Dangerous with ==<br/>
+                        if (userAge == minAge) {<br/>
+                            console.log("Comparing with ==: Condition is true");<br/>
+                            // This executes because "25" is converted to 25<br/>
+                        }<br/>
+                        <br/>
+                        // Safe with ===<br/>
+                        if (userAge === minAge) {<br/>
+                            console.log("Comparing with ===: Condition is true");<br/>
+                            // This doesn't execute because "25" (string) is not 25 (number)<br/>
+                        } else {<br/>
+                            console.log("Types don't match - use proper type conversion");<br/>
+                        }
+                    </div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> == caused unexpected behavior by converting string to number. 
+                        === caught the type mismatch. Best practice: Always use === to avoid bugs.
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>++a vs a++</h2>
+                <p style="margin-bottom: 20px;">
+                    Pre-increment and post-increment both increase values but at different times. The difference matters in expressions.
+                </p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>++a (Pre-increment)</th>
+                            <th>a++ (Post-increment)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature">Increment Timing</span></td>
+                            <td>BEFORE returning value</td>
+                            <td>AFTER returning value</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Value Returned</span></td>
+                            <td>New value (incremented)</td>
+                            <td>Old value (before increment)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Performance</span></td>
+                            <td>Slightly faster</td>
+                            <td>Creates temporary copy</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Example Effect</span></td>
+                            <td>let b = ++a; // a then b = incremented value</td>
+                            <td>let b = a++; // a = incremented, b = old value</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: ++a (Pre-increment)</div>
+                        <p>Increments the variable first then returns the new value for use in expressions.</p>
+                    </div>
+                    <div class="code-block">
+                        let a = 5;<br/>
+                        let result = ++a;  // a increments to 6, then returns 6<br/>
+                        console.log("a: " + a);        // 6<br/>
+                        console.log("result: " + result); // 6
+                    </div>
+                    <div class="output-box">Output: a: 6<br>Output: result: 6</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> ++a increments a to 6 FIRST then returns 6 to result. 
+                        Both variables end up with the value 6.
+                    </div>
+                </div>
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: a++ (Post-increment)</div>
+                        <p>Returns the current value first then increments the variable for the next use.</p>
+                    </div>
+                    <div class="code-block">
+                        let a = 5;<br/>
+                        let result = a++;  // returns 5 then a increments to 6<br/>
+                        console.log("a: " + a);        // 6<br/>
+                        console.log("result: " + result); // 5
+                    </div>
+                    <div class="output-box">Output: a: 6<br>Output: result: 5</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> a++ returns the original value 5 to result THEN increments a to 6. 
+                        This is why result gets 5 while a becomes 6.
+                    </div>
+                </div>                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Complex Expression Example</div>
+                    </div>
+                    <div class="code-block">
+                        let x = 5;<br/>
+                        let y = 10;<br/>
+                        let result1 = ++x + y;  // x becomes 6 then 6 + 10 = 16<br/>
+                        console.log("Using ++x: " + result1); // 16<br/>
+                        <br/>
+                        let a = 5;<br/>
+                        let b = 10;<br/>
+                        let result2 = a++ + b;  // 5 + 10 = 15 then a becomes 6<br/>
+                        console.log("Using a++: " + result2); // 15<br/>
+                    </div>                    
+                    <div class="output-box">Output: Using ++x: 16<br>Output: Using a++: 15</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> In expressions, ++x increments first (6) then adds, while a++ adds the old value (5) 
+                        then increments. The difference affects the result.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>--a vs a--</h2>
+                <p style="margin-bottom: 20px;">
+                    Pre-decrement and post-decrement work the same way as their increment counterparts but in the opposite direction.
+                </p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>--a (Pre-decrement)</th>
+                            <th>a-- (Post-decrement)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="feature">Decrement Timing</span></td>
+                            <td>BEFORE returning value</td>
+                            <td>AFTER returning value</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Value Returned</span></td>
+                            <td>New value (decremented)</td>
+                            <td>Old value (before decrement)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="feature">Example Effect</span></td>
+                            <td>let b = --a; // a then b = decremented value</td>
+                            <td>let b = a--; // a = decremented, b = old value</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: --a (Pre-decrement)</div>
+                        <p>Decrements the variable first then returns the new value for use in expressions.</p>
+                    </div>
+                    <div class="code-block">
+                        let a = 10;<br/>
+                        let result = --a;  // a decrements to 9 then returns 9<br/>
+                        console.log("a: " + a);        // 9<br/>
+                        console.log("result: " + result); // 9
+                    </div>
+                    <div class="output-box">Output: a: 9<br>Output: result: 9</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> --a decrements a to 9 FIRST then returns 9 to result. 
+                        Both end up with the value 9.
+                    </div>
+                </div>
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Definition: a-- (Post-decrement)</div>
+                        <p>Returns the current value first, then decrements the variable for the next use.</p>
+                    </div>
+                    <div class="code-block">
+                        let a = 10;<br/>
+                        let result = a--;  // returns 10 then a decrements to 9<br/>
+                        console.log("a: " + a);        // 9<br/>
+                        console.log("result: " + result); // 10
+                    </div>
+                    <div class="output-box">Output: a: 9<br>Output: result: 10</div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> a-- returns the original value 10 to result THEN decrements a to 9. 
+                        result preserves the old value while a is decremented.
+                    </div>
+                </div>
+                
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-title">Countdown Example</div>
+                    </div>
+                    <div class="code-block">
+                        // Using pre-decrement<br/>
+                        let count1 = 5;<br/>
+                        console.log("Pre-decrement:");<br/>
+                        console.log(--count1); // 4<br/>
+                        console.log(--count1); // 3<br/>
+                        console.log(--count1); // 2<br/>
+                        <br/>
+                        // Using post-decrement<br/>
+                        let count2 = 5;<br/>
+                        console.log("\nPost-decrement:");<br/>
+                        console.log(count2--); // 5<br/>
+                        console.log(count2--); // 4<br/>
+                        console.log(count2--); // 3
+                    </div>
+                    <div class="output-box">
+                        Output: Pre-decrement:<br>
+                        Output: 4<br>
+                        Output: 3<br>
+                        Output: 2<br>
+                        Output:<br>
+                        Output: Post-decrement:<br>
+                        Output: 5<br>
+                        Output: 4<br>
+                        Output: 3
+                    </div>
+                    <div class="explanation">
+                        <strong>Explanation:</strong> Pre-decrement (--count) prints decremented value immediately. 
+                        Post-decrement (count--) prints the old value first. In loops either works but the printed output differs.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>

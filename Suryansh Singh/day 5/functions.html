@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #667eea;
+        }        
+        nav > a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }        
+        nav > a:hover {
+            color: #764ba2;
+        }        
+        .main-content {
+            padding: 40px 30px;
+        }        
+        .section {
+            margin-bottom: 40px;
+        }        
+        .section > h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .section > h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }        
+        .definition-box {
+            background: #f0f4ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+        }        
+        .example-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }        
+        .example-num {
+            background: #667eea;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }        
+        .example-code {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }        
+        .output-box {
+            background: #e8f5e9;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }        
+        .explanation {
+            background: #fff9e6;
+            padding: 12px;
+            border-radius: 3px;
+            margin: 10px 0;
+        }        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 0.95em;
+            transition: 0.3s;
+        }        
+        .btn:hover {
+            background: #764ba2;
+        }        
+        .function-group {
+            background: #f0f4ff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }        
+        .function-title {
+            color: #667eea;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: 0.3s;
+        }        
+        .back-btn:hover {
+            background: #764ba2;
+        }        
+        footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Functions</h1>
+        </header>
+        <nav>
+            <a href="tokens.html">Tokens</a>
+            <a href="keywords.html">Keywords</a>
+            <a href="datatypes.html">Data Types & Variables</a>
+            <a href="operators.html">Operators</a>
+            <a href="statements.html">Statements </a>
+            <a href="project.html">Mini Project</a>
+            <a href="comparison.html">Comparison (Bonus)</a>        
+        </nav>   
+        <div class="main-content">            
+            <div class="section">
+                <h2>What are Functions ?</h2>
+                <div class="definition-box">
+                    <p>
+                        A <strong>function</strong> is a reusable block of code that performs a specific task. Functions allow you to 
+                        write code once and use it multiple times. They help organize code, reduce duplication and make programs easier 
+                        to understand and maintain. Functions can accept parameters (input) and return values (output), making them flexible 
+                        and powerful tools in programming.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        There are two types of functions in JavaScript: <strong>User-Defined Functions</strong> (created by programmers) 
+                        and <strong>Built-in Functions</strong> (provided by JavaScript itself). Understanding both is essential for effective 
+                        programming.
+                    </p>
+                </div>
+            </div>            
+            <div class="section">
+                <h2>User-Defined Functions</h2>
+                <div class="definition-box">
+                    <p>
+                        <strong>User-defined functions</strong> are functions you create to perform specific tasks in your application. 
+                        They follow this syntax:
+                    </p>
+                    <div class="example-code" style="margin-top: 15px;">
+                        function functionName(parameters) {<br/>
+                            // code to execute<br/>
+                            return result; // optional<br/>
+                        }
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 1: Simple Function</div>
+                    <div class="example-code">
+                        function greet() {<br/>
+                            console.log("Hello, Welcome!");<br/>
+                        }<br/>
+                        greet(); // Call the function
+                    </div>
+                    <div class="output-box">Output: Hello, Welcome!</div>
+                    <div class="explanation">
+                        This function has no parameters and no return value. It simply displays a message when called. 
+                        Functions are called using their name followed by parentheses: greet()
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 2: Function with Parameters</div>
+                    <div class="example-code">
+                        function add(a, b) {<br/>
+                            return a + b;<br/>
+                        }<br/>
+                        let result = add(5, 3);<br/>
+                        console.log("Sum: " + result);
+                    </div>
+                    <div class="output-box">Output: Sum: 8</div>
+                    <div class="explanation">
+                        This function accepts two parameters (a, b) and returns their sum. We pass arguments 5 and 3 when calling the function 
+                        and it returns 8. The return keyword sends the result back to the caller.
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 3: Function with Multiple Operations</div>
+                    <div class="example-code">
+                        function calculateArea(length, width) {<br/>
+                            let area = length * width;<br/>
+                            return area;<br/>
+                        }<br/>
+                        let room = calculateArea(10, 5);<br/>
+                        console.log("Room area: " + room + " sq units");
+                    </div>
+                    <div class="output-box">Output: Room area: 50 sq units</div>
+                    <div class="explanation">
+                        Functions can perform multiple operations. Here we calculate the area by multiplying length and width then return the result.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <div class="example-num">Example 4: Function Checking Conditions</div>
+                    <div class="example-code">
+                        function isEven(num) {<br/>
+                            if (num % 2 === 0) {<br/>
+                                return true;<br/>
+                            } else {<br/>
+                                return false;<br/>
+                            }<br/>
+                        }<br/><br/>
+
+                        console.log(isEven(4));  // true<br/>
+                        console.log(isEven(7));  // false<br/>
+                    </div>
+                    <div class="output-box">Output: true<br>Output: false</div>
+                    <div class="explanation">
+                        Functions can include conditional logic. This function checks if a number is even by testing if it's divisible by 2, 
+                        returning true or false accordingly.
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 5: Function with String Operations</div>
+                    <div class="example-code">
+                        function fullName(first, last) {<br/>
+                            return first + " " + last;<br/>
+                        }<br/><br/>
+
+                        let name = fullName("Suryansh", "Singh");<br/>
+                        console.log("Full Name: " + name);<br/>
+                    </div>
+                    <div class="output-box">Output: Full Name: Suryansh Singh</div>
+                    <div class="explanation">
+                        Functions work with different data types. Here we concatenate two string parameters to create a full name. 
+                        Strings can be combined using the + operator.
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 6: Function Calculating Grade</div>
+                    <div class="example-code">
+                        function getGrade(marks) {<br/>
+                            if (marks >= 90) return "A";<br/>
+                            else if (marks >= 80) return "B";<br/>
+                            else if (marks >= 70) return "C";<br/>
+                            else return "F";<br/>
+                        }<br/><br/>
+                        console.log("Grade: " + getGrade(85));<br/>
+                        console.log("Grade: " + getGrade(72));
+                    </div>
+                    <div class="output-box">Output: Grade: B<br>Output: Grade: C</div>
+                    <div class="explanation">
+                        Ladder if statements inside functions determine which grade to return based on marks. 
+                        This demonstrates complex decision-making within functions.
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 7: Function with Default Values</div>
+                    <div class="example-code">
+                        function multiply(a, b = 1) {<br/>
+                            return a * b;<br/>
+                        }<br/><br/>
+
+                        console.log(multiply(5, 3));  // 15<br/>
+                        console.log(multiply(5));     // 5 (b defaults to 1)
+                    </div>
+                    <div class="output-box">Output: 15<br>Output: 5</div>
+                    <div class="explanation">
+                        Functions can have default parameter values. If b is not provided, it defaults to 1. 
+                        This makes functions more flexible.
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 8: Function Displaying on Page</div>
+                    <div class="example-code">
+                        function displayMessage(message) {<br/>
+                            document.write(message + "");<br/>
+                            console.log("Displayed: " + message);<br/>
+                        }<br/><br/>
+                        displayMessage("Welcome to JavaScript!");<br/>
+                        displayMessage("Functions are powerful!");
+                    </div>
+                    <div class="output-box">Browser shows: Welcome to JavaScript!<br>Browser shows: Functions are powerful!<br>Console logs both messages</div>
+                    <div class="explanation">
+                        Functions can perform different types of operations including displaying content on the page with document.write() 
+                        and logging to console.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <div class="example-num">Example 9: Function with Array</div>
+                    <div class="example-code">
+                        function sumArray(arr) {<br/>
+                            let sum = 0;<br/>
+                            for (let i = 0; i < arr.length; i++) {<br/>
+                                sum = sum + arr[i];<br/>
+                            }<br/>
+                            return sum;<br/>
+                        }<br/><br/>
+                        let numbers = [10, 20, 30, 40];<br/>
+                        console.log("Total: " + sumArray(numbers));
+                    </div>
+                    <div class="output-box">Output: Total: 100</div>
+                    <div class="explanation">
+                        Functions can accept complex data types like arrays. Here we loop through the array to calculate the sum 
+                        of all elements.
+                    </div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 10: Function Calling Another Function</div>
+                    <div class="example-code">
+                        function square(x) {<br/>
+                            return x * x;<br/>
+                        }<br/><br/>
+                        function calculateArea(side) {<br/>
+                            return square(side);<br/>
+                        }<br/><br/>
+                        console.log("Area of square with side 5: " + calculateArea(5));
+                    </div>
+                    <div class="output-box">Output: Area of square with side 5: 25</div>
+                    <div class="explanation">
+                        Functions can call other functions. Here calculateArea calls square to compute the area. 
+                        This modular approach makes code more organized.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Built-in Functions</h2>
+                <div class="definition-box">
+                    <p>
+                        <strong>Built-in functions</strong> are functions provided by JavaScript itself. They're already available 
+                        and ready to use without requiring you to write them. Common built-in functions include alert(), confirm(), 
+                        prompt(), console.log(), parseInt() and many others.
+                    </p>
+                </div>                
+                <div class="function-group">
+                    <div class="function-title">alert() - Display Alert Dialog</div>                    
+                    <div class="definition-box">
+                        <p>
+                            <strong>Purpose:</strong> Displays a popup dialog with a message and an OK button. The script pauses 
+                            until the user clicks OK. Alert is useful for displaying important messages to users.
+                        </p>
+                        <p style="margin-top: 10px;"><strong>Syntax:</strong> alert(message);</p>
+                        <p style="margin-top: 10px;"><strong>Output:</strong> Displays a modal popup dialog box</p>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">alert() Example 1</div>
+                        <div class="example-code">
+                            alert("Welcome to this page!");
+                        </div>
+                        <div class="explanation">
+                            This displays a simple popup message. When you run this, an alert box appears with the message 
+                            "Welcome to this page!" and an OK button.
+                        </div>
+                        <button class="btn" onclick="alert('Welcome to this page!');">Try alert() - Example 1</button>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-num">alert() Example 2</div>
+                        <div class="example-code">
+                            let name = "Suryansh";<br/>
+                            alert("Hello, " + name + "!");
+                        </div>
+                        <div class="explanation">
+                            Alert can display dynamic content. Here we concatenate a variable with text to create a personalized message. 
+                            The alert shows: "Hello, Suryansh!"
+                        </div>
+                        <button class="btn" onclick="var name='Suryansh'; alert('Hello, ' + name + '!');">Try alert() - Example 2</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">alert() Example 3</div>
+                        <div class="example-code">
+                            let score = 95;<br/>
+                            alert("Your score is: " + score + " out of 100");
+                        </div>
+                        <div class="explanation">
+                            Alert can display information about calculations or data. This example shows a score with context. 
+                            Very useful for notifications and confirmations.
+                        </div>
+                        <button class="btn" onclick="var score=95; alert('Your score is: ' + score + ' out of 100');">Try alert() - Example 3</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">alert() Example 4</div>
+                        <div class="example-code">
+                            alert("Error: File not found!\nPlease try again.");
+                        </div>
+                        <div class="explanation">
+                            The \n adds a line break in the alert message. This helps format multi-line messages clearly. 
+                            Error messages often use this format.
+                        </div>
+                        <button class="btn" onclick="alert('Error: File not found!\\nPlease try again.');">Try alert() - Example 4</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">alert() Example 5</div>
+                        <div class="example-code">
+                            let product = "Laptop";
+                            let price = 39999.99;
+                            alert(product + " costs Rs" + price + ". Interested?");
+                        </div>
+                        <div class="explanation">
+                            Complex messages combining multiple variables work well with alert. This showcases a product 
+                            with price information.
+                        </div>
+                        <button class="btn" onclick="var product='Laptop'; var price=39999.99; alert(product + ' costs Rs ' + price + '. Interested?');">Try alert() - Example 5</button>
+                    </div>
+                </div>
+
+                <div class="function-group">
+                    <div class="function-title">confirm() - Confirmation Dialog</div>
+                    <div class="definition-box">
+                        <p>
+                            <strong>Purpose:</strong> Displays a dialog with a message and two buttons: OK and Cancel. Returns true if 
+                            the user clicks OK, false if they click Cancel. Useful for confirming important actions.
+                        </p>
+                        <p style="margin-top: 10px;"><strong>Syntax:</strong> let result = confirm(message);</p>
+                        <p style="margin-top: 10px;"><strong>Output:</strong> Returns boolean value (true/false)</p>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">confirm() Example 1</div>
+                        <div class="example-code">
+                            let userChoice = confirm("Do you want to continue?");<br/>
+                            console.log("User said: " + userChoice);
+                        </div>
+                        <div class="explanation">
+                            Confirm returns true if OK is clicked, false if Cancel is clicked. The result is stored and can be used 
+                            for conditional logic.
+                        </div>
+                        <button class="btn" onclick="var userChoice = confirm('Do you want to continue?'); console.log('User said: ' + userChoice); alert('Result: ' + userChoice);">Try confirm() - Example 1</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">confirm() Example 2</div>
+                        <div class="example-code">
+                            if (confirm("Are you sure you want to delete?")) {<br/>
+                                console.log("Deleting...");<br/>
+                                alert("Item deleted!");<br/>
+                            } else {<br/>
+                                console.log("Deletion cancelled");<br/>
+                                alert("Deletion cancelled");<br/>
+                            }
+                        </div>
+                        <div class="explanation">
+                            Confirm is perfect for confirmation dialogs before performing important actions. The if-else structure 
+                            handles different user responses.
+                        </div>
+                        <button class="btn" onclick="if(confirm('Are you sure you want to delete?')) { console.log('Deleting...'); alert('Item deleted!'); } else { console.log('Deletion cancelled'); alert('Deletion cancelled'); }">Try confirm() - Example 2</button>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-num">confirm() Example 3</div>
+                        <div class="example-code">
+                            let isAdmin = confirm("Admin login?");<br/>
+                            if (isAdmin) {<br/>
+                                alert("Welcome, Administrator!");<br/>
+                            } else {<br/>
+                                alert("Welcome, User!");<br/>
+                            }
+                        </div>
+                        <div class="explanation">
+                            Confirm can be used for branching logic based on user choice. Different messages display based on 
+                            whether the user confirms or cancels.
+                        </div>
+                        <button class="btn" onclick="var isAdmin = confirm('Admin login?'); if(isAdmin) { alert('Welcome, Administrator!'); } else { alert('Welcome, User!'); }">Try confirm() - Example 3</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">confirm() Example 4</div>
+                        <div class="example-code">
+                            let proceed = confirm("Submit form with the following data?\n\nName: Suryansh\nEmail: suryanshsinghchauhanthakur@gmail.com");<br/>
+                            if (proceed) {<br/>
+                                document.write("Form submitted successfully!");<br/>
+                            } else {<br/>
+                                document.write("Form submission cancelled");<br/>
+                            }
+                        </div>
+                        <div class="explanation">
+                            Multi-line messages help users understand what they're confirming. This example shows form submission confirmation 
+                            with user data preview.
+                        </div>
+                        <button class="btn" onclick="var proceed = confirm('Submit form with the following data?\\n\\nName: Suryansh\\nEmail: suryanshsinghchauhanthakur@gmail.com'); alert(proceed ? 'Form submitted' : 'Cancelled');">Try confirm() - Example 4</button>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-num">confirm() Example 5</div>
+                        <div class="example-code">
+                            let quantity = 5;<br/>
+                            let price = 50;<br/>
+                            let total = quantity * price;<br/>
+                            let buyConfirm = confirm("Buy " + quantity + " items for Rs" + total + "?");<br/>
+                            console.log("Purchase confirmed: " + buyConfirm);<br/>
+                        </div>
+                        <div class="explanation">
+                            Confirm can display calculated information for user review before confirming an action. Useful for 
+                            e-commerce and transaction systems.
+                        </div>
+                        <button class="btn" onclick="var quantity=5; var price=50; var total=quantity*price; var buyConfirm=confirm('Buy '+quantity+' items for Rs '+total+'?'); console.log('Purchase: '+buyConfirm); alert('Confirmed: '+buyConfirm);">Try confirm() - Example 5</button>
+                    </div>
+                </div>                
+                <div class="function-group">
+                    <div class="function-title">prompt() - Input Dialog</div>
+                    <div class="definition-box">
+                        <p>
+                            <strong>Purpose:</strong> Displays a dialog that prompts the user to enter text. Returns the entered text as 
+                            a string or null if Cancel is clicked. Useful for collecting user input.
+                        </p>
+                        <p style="margin-top: 10px;"><strong>Syntax:</strong> let userInput = prompt(message, defaultValue);</p>
+                        <p style="margin-top: 10px;"><strong>Output:</strong> Returns string value of user input</p>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">prompt() Example 1</div>
+                        <div class="example-code">
+                            let name = prompt("What is your name?");<br/>
+                            console.log("User entered: " + name);<br/>
+                            alert("Hello, " + name + "!");
+                        </div>
+                        <div class="explanation">
+                            Prompt gets user input and stores it in a variable. The entered text can then be used in your program. 
+                            This is how you collect information from users.
+                        </div>
+                        <button class="btn" onclick="var name = prompt('What is your name?'); console.log('User entered: '+name); alert('Hello, '+name+'!');">Try prompt() - Example 1</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">prompt() Example 2</div>
+                        <div class="example-code">
+                            let age = prompt("How old are you?", "18");<br/>
+                            console.log("Age: " + age);<br/>
+                            if (age >= 18) {<br/>
+                                alert("You are an adult");<br/>
+                            } else {<br/>
+                                alert("You are a minor");<br/>
+                            }
+                        </div>
+                        <div class="explanation">
+                            Prompt can have a default value (second parameter). "18" appears pre-filled in the input box. 
+                            The input can then be used in conditional logic.
+                        </div>
+                        <button class="btn" onclick="var age = prompt('How old are you?', '18'); alert(age >= 18 ? 'Adult' : 'Minor');">Try prompt() - Example 2</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">prompt() Example 3</div>
+                        <div class="example-code">
+                            let email = prompt("Enter your email:");<br/>
+                            if (email !== null) {<br/>
+                                console.log("Email: " + email);<br/>
+                                alert("Thank you! We have your email: " + email);<br/>
+                            } else {<br/>
+                                console.log("User cancelled");<br/>
+                                alert("Email entry cancelled");<br/>
+                            }
+                        </div>
+                        <div class="explanation">
+                            Checking for null handles cases where the user clicks Cancel. This prevents errors when processing user input. 
+                            The !== operator checks if the value is not null.
+                        </div>
+                        <button class="btn" onclick="var email = prompt('Enter your email:'); if(email !== null) { alert('Email: ' + email); } else { alert('Cancelled'); }">Try prompt() - Example 3</button>
+                    </div>                    
+                    <div class="example-card">
+                        <div class="example-num">prompt() Example 4</div>
+                        <div class="example-code">
+                            let score = prompt("Enter your score (0-100):");<br/>
+                            let scoreNum = parseInt(score);<br/>
+                            if (scoreNum > 80) {<br/>
+                                alert("Excellent!");<br/>
+                            } else if (scoreNum > 60) {<br/>
+                                alert("Good");<br/>
+                            } else {<br/>
+                                alert("Needs improvement");<br/>
+                            }
+                        </div>
+                        <div class="explanation">
+                            Prompt returns a string, so parseInt() converts it to a number for comparison. This demonstrates type conversion 
+                            and using input in conditional logic.
+                        </div>
+                        <button class="btn" onclick="var score = prompt('Enter your score (0-100):'); var scoreNum = parseInt(score); if(scoreNum > 80) { alert('Excellent!'); } else if(scoreNum > 60) { alert('Good'); } else { alert('Needs improvement'); }">Try prompt() - Example 4</button>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-num">prompt() Example 5</div>
+                        <div class="example-code">
+                            let color = prompt("What is your favorite color?", "Blue");<br/>
+                            document.write("Your favorite color is: <strong style='color: " + color + "'>" + color + "</strong>");<br/>
+                            console.log("Color preference: " + color);<br/>
+                        </div>
+                        <div class="explanation">
+                            Prompt input can be used to create dynamic content. Here the user's favorite color input is displayed with 
+                            that color styling. Shows how user input can customize page content.
+                        </div>
+                        <button class="btn" onclick="var color = prompt('What is your favorite color?', 'Blue'); alert('You chose: ' + color);">Try prompt() - Example 5</button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <footer>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>

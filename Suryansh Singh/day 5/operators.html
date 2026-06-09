@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }        
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #667eea;
+        }
+        nav > a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }        
+        nav > a:hover {
+            color: #764ba2;
+        }        
+        .main-content {
+            padding: 40px 30px;
+        }
+        .section {
+            margin-bottom: 50px;
+        }        
+        .section > h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }        
+        .section > h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }        
+        .operator-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }        
+        .operator-num {
+            background: #667eea;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }        
+        .output-box {
+            background: #e8f5e9;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }        
+        .explanation {
+            background: #fff9e6;
+            padding: 12px;
+            border-radius: 3px;
+            margin: 10px 0;
+        }        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }        
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: 0.3s;
+        }        
+        .back-btn:hover {
+            background: #764ba2;
+        }        
+        footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Operators</h1>
+        </header>        
+        <nav>
+            <a href="tokens.html">Tokens</a>
+            <a href="keywords.html">Keywords</a>
+            <a href="datatypes.html">Data Types & Variables</a>
+            <a href="functions.html">Functions</a>
+            <a href="statements.html">Statements </a>
+            <a href="project.html">Mini Project</a>
+            <a href="comparison.html">Comparison (Bonus)</a>
+        </nav>        
+        <div class="main-content">           
+            <div class="section">
+                <h2>Arithmetic Operators</h2>
+                <p style="margin-bottom: 20px;">
+                    Arithmetic operators perform mathematical calculations on numeric values. They include addition, subtraction, 
+                    multiplication, division and modulus (remainder).
+                </p>                
+                <h3>Addition (+)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 1</div>
+                    <div class="code-block">
+                        let a = 10;<br/>
+                        let b = 5;<br/>
+                        let sum = a + b;<br/>
+                        console.log(sum); // 15
+                    </div>
+                    <div class="output-box">Output: 15</div>
+                    <div class="explanation">Simple addition: 10 + 5 = 15</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 2</div>
+                    <div class="code-block">
+                        let x = 2.5;<br/>
+                        let y = 3.7;<br/>
+                        console.log(x + y); // 6.2
+                    </div>
+                    <div class="output-box">Output: 6.2</div>
+                    <div class="explanation">Addition works with decimals: 2.5 + 3.7 = 6.2</div>
+                </div>
+                <div class="operator-card">
+                    <div class="operator-num">Example 3</div>
+                    <div class="code-block">
+                        let text1 = "Hello";<br/>
+                        let text2 = " World";<br/>
+                        console.log(text1 + text2); // Hello World
+                    </div>
+                    <div class="output-box">Output: Hello World</div>
+                    <div class="explanation">Addition also concatenates strings: "Hello" + " World" = "Hello World"</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 4</div>
+                    <div class="code-block">
+                        console.log(5 + 3 + 2); // 10<br/>
+                        console.log(1 + 2 + 3 + 4 + 5); // 15
+                    </div>
+                    <div class="output-box">Output: 10<br>Output: 15</div>
+                    <div class="explanation">Multiple additions are evaluated left to right: 5 + 3 + 2 = (5+3) + 2 = 10</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 5</div>
+                    <div class="code-block">
+                        let quantity = 3;<br/>
+                        let price = 50.99;<br/>
+                        let total = quantity + price;<br/>
+                        console.log("Total: Rs" + total); // Total: $153.97
+                    </div>
+                    <div class="output-box">Output: Total: Rs 153.97</div>
+                    <div class="explanation">Addition in real-world scenarios like calculating totals</div>
+                </div>                
+                <h3>Subtraction (-)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 6</div>
+                    <div class="code-block">
+                        let a = 20;<br/>
+                        let b = 8;<br/>
+                        let diff = a - b;<br/>
+                        console.log(diff); // 12
+                    </div>
+                    <div class="output-box">Output: 12</div>
+                    <div class="explanation">Simple subtraction: 20 - 8 = 12</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 7</div>
+                    <div class="code-block">
+                        console.log(100 - 45 - 20); // 35<br/>
+                        console.log(50 - 10 - 5 - 3); // 32
+                    </div>
+                    <div class="output-box">Output: 35<br>Output: 32</div>
+                    <div class="explanation">Multiple subtractions: 100 - 45 - 20 = (100-45) - 20 = 35</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 8</div>
+                    <div class="code-block">
+                        let currentBalance = 5000;<br/>
+                        let withdrawal = 1500;<br/>
+                        let newBalance = currentBalance - withdrawal;<br/>
+                        console.log("New balance: Rs" + newBalance); // New balance: Rs 3500
+                    </div>
+                    <div class="output-box">Output: New balance: Rs 3500</div>
+                    <div class="explanation">Subtraction in banking: reducing balance after withdrawal</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 9</div>
+                    <div class="code-block">
+                        let x = 5.5;<br/>
+                        let y = 2.3;<br/>
+                        let result = x - y;<br/>
+                        console.log(result); // 3.2
+                    </div>
+                    <div class="output-box">Output: 3.2</div>
+                    <div class="explanation">Subtraction with decimal numbers: 5.5 - 2.3 = 3.2</div>
+                </div>                
+                <h3>Multiplication (*)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 10</div>
+                    <div class="code-block">
+                        let a = 6;<br/>
+                        let b = 7;<br/>
+                        let product = a * b;<br/>
+                        console.log(product); // 42
+                    </div>
+                    <div class="output-box">Output: 42</div>
+                    <div class="explanation">Simple multiplication: 6 * 7 = 42</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 11</div>
+                    <div class="code-block">
+                        console.log(3 * 4 * 2); // 24<br/>
+                        console.log(5 * 5); // 25
+                    </div>
+                    <div class="output-box">Output: 24<br>Output: 25</div>
+                    <div class="explanation">Multiplication is left-associative: 3 * 4 * 2 = (3*4) * 2 = 24</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 12</div>
+                    <div class="code-block">
+                        let length = 10;<br/>
+                        let width = 5;<br/>
+                        let area = length * width;<br/>
+                        console.log("Area: " + area + " sq units"); // Area: 50 sq units
+                    </div>
+                    <div class="output-box">Output: Area: 50 sq units</div>
+                    <div class="explanation">Multiplication for calculations like area: length × width</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 13</div>
+                    <div class="code-block">
+                        let items = 5;<br/>
+                        let pricePerItem = 25.50;<br/>
+                        let totalCost = items * pricePerItem;<br/>
+                        console.log("Total: Rs" + totalCost); // Total: Rs 127.5
+                    </div>
+                    <div class="output-box">Output: Total: Rs 127.5</div>
+                    <div class="explanation">Multiplication in shopping: items × price per item</div>
+                </div>                
+                <h3>Division (/)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 14</div>
+                    <div class="code-block">
+                        let a = 20;<br/>
+                        let b = 4;<br/>
+                        let quotient = a / b;<br/>
+                        console.log(quotient); // 5
+                    </div>
+                    <div class="output-box">Output: 5</div>
+                    <div class="explanation">Simple division: 20 ÷ 4 = 5</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 15</div>
+                    <div class="code-block">
+                        console.log(15 / 3); // 5<br/>
+                        console.log(100 / 4); // 25
+                    </div>
+                    <div class="output-box">Output: 5<br>Output: 25</div>
+                    <div class="explanation">Exact division operations</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 16</div>
+                    <div class="code-block">
+                        let totalCost = 150;<br/>
+                        let numberOfPeople = 5;<br/>
+                        let costPerPerson = totalCost / numberOfPeople;<br/>
+                        console.log("Cost per person: Rs" + costPerPerson); // Cost per person: Rs 30
+                    </div>
+                    <div class="output-box">Output: Cost per person: Rs 30</div>
+                    <div class="explanation">Division to split costs: total ÷ people</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 17</div>
+                    <div class="code-block">
+                        console.log(10 / 3); // 3.3333 . . .<br/>
+                        console.log(7 / 2); // 3.5
+                    </div>
+                    <div class="output-box">Output: 3.3333333333<br>Output: 3.5</div>
+                    <div class="explanation">Division can produce decimal results</div>
+                </div>                
+                <h3>Modulus (%) - Remainder</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 18</div>
+                    <div class="code-block">
+                        let a = 17;<br/>
+                        let b = 5;<br/>
+                        let remainder = a % b;<br/>
+                        console.log(remainder); // 2 (17 = 5*3 + 2)
+                    </div>
+                    <div class="output-box">Output: 2</div>
+                    <div class="explanation">Modulus gives remainder: 17 ÷ 5 = 3 remainder 2</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 19</div>
+                    <div class="code-block">
+                        console.log(10 % 3); // 1<br/>
+                        console.log(20 % 6); // 2<br/>
+                        console.log(15 % 5); // 0
+                    </div>
+                    <div class="output-box">Output: 1<br>Output: 2<br>Output: 0</div>
+                    <div class="explanation">Finding remainders in division</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 20</div>
+                    <div class="code-block">
+                        let num = 12;<br/>
+                        console.log(num % 2); // 0 (even)<br/>
+                        let num2 = 13;<br/>
+                        console.log(num2 % 2); // 1 (odd)
+                    </div>
+                    <div class="output-box">Output: 0<br>Output: 1</div>
+                    <div class="explanation">Using modulus to check if numbers are even (0) or odd (1)</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Relational (Comparison) Operators</h2>
+                <p style="margin-bottom: 20px;">
+                    Relational operators compare values and return boolean results (true or false). They're essential for decision-making.
+                </p>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Operator</th>
+                        <th>Name</th>
+                        <th>Example</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td>&gt;</td>
+                        <td>Greater than</td>
+                        <td>5 > 3</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;</td>
+                        <td>Less than</td>
+                        <td>5 < 3</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;=</td>
+                        <td>Greater than or equal</td>
+                        <td>5 >= 5</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;=</td>
+                        <td>Less than or equal</td>
+                        <td>5 <= 5</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>==</td>
+                        <td>Equal (loose)</td>
+                        <td>5 == "5"</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>===</td>
+                        <td>Strict equal</td>
+                        <td>5 === "5"</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Not equal (loose)</td>
+                        <td>5 != 3</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>!==</td>
+                        <td>Strict not equal</td>
+                        <td>5 !== "5"</td>
+                        <td>true</td>
+                    </tr>
+                </table>                
+                <h3>Greater Than (&gt;)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 1</div>
+                    <div class="code-block">
+                        console.log(10 > 5);   // true<br/>
+                        console.log(3 > 8);    // false<br/>
+                        console.log(7 > 7);    // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: false<br>Output: false</div>
+                    <div class="explanation">Checks if left value is strictly greater than right value</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 2</div>
+                    <div class="code-block">
+                        let age = 25;<br/>
+                        console.log(age > 18); // true<br/>
+                        console.log(age > 30); // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: false</div>
+                    <div class="explanation">Common use: checking if age is greater than a limit</div>
+                </div>                
+                <h3>Less Than (&lt;)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 3</div>
+                    <div class="code-block">
+                        console.log(3 < 8);    // true<br/>
+                        console.log(10 < 5);   // false<br/>
+                        console.log(5 < 5);    // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: false<br>Output: false</div>
+                    <div class="explanation">Checks if left value is strictly less than right value</div>
+                </div>                
+                <h3>Greater Than or Equal (&gt;=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 4</div>
+                    <div class="code-block">
+                        console.log(10 >= 5);  // true<br/>
+                        console.log(5 >= 5);   // true<br/>
+                        console.log(3 >= 8);   // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: true<br>Output: false</div>
+                    <div class="explanation">True if left value is greater than OR equal to right value</div>
+                </div>                
+                <h3>Less Than or Equal (&lt;=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 5</div>
+                    <div class="code-block">
+                        console.log(3 <= 8);   // true<br/>
+                        console.log(5 <= 5);   // true<br/>
+                        console.log(10 <= 5);  // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: true<br>Output: false</div>
+                    <div class="explanation">True if left value is less than OR equal to right value</div>
+                </div>                
+                <h3>Equality: == vs ===</h3>
+                <div class="important" style="background: #fff3cd; border-left-color: #ffc107;">
+                    <p style="margin-top: 10px;">
+                        <strong>== (Loose Equality):</strong> Compares values, performing type conversion if needed. "5" == 5 is true.
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <strong>=== (Strict Equality):</strong> Compares both value AND type. No conversion. "5" === 5 is false.
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <strong>Best Practice:</strong> Always use === and !== in modern JavaScript to avoid unexpected behavior.
+                    </p>
+                </div>
+                <div class="operator-card">
+                    <div class="operator-num">Example 6: == (Loose Equality)</div>
+                    <div class="code-block">
+                        console.log(5 == "5");        // true (values equal, types differ)<br/>
+                        console.log(5 == 5);          // true (values and types equal)<br/>
+                        console.log(0 == false);      // true (0 converts to false)<br/>
+                        console.log("" == false);     // true (empty string converts to false)<br/>
+                        console.log(null == undefined); // true (special case)
+                    </div>
+                    <div class="output-box">Output: true<br>Output: true<br>Output: true<br>Output: true<br>Output: true</div>
+                    <div class="explanation">
+                        Loose equality performs type coercion. JavaScript converts types to compare values. 
+                        5 and "5" are equal because JavaScript converts "5" to number 5 before comparing.
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 7: === (Strict Equality)</div>
+                    <div class="code-block">
+                        console.log(5 === "5");       // false (different types)<br/>
+                        console.log(5 === 5);         // true (same value and type)<br/>
+                        console.log(0 === false);     // false (different types)<br/>
+                        console.log("" === false);    // false (different types)<br/>
+                        console.log(null === undefined); // false
+                    </div>
+                    <div class="output-box">Output: false<br>Output: true<br>Output: false<br>Output: false<br>Output: false</div>
+                    <div class="explanation">
+                        Strict equality checks both value AND type. 5 and "5" are NOT equal because one is a number 
+                        and the other is a string. No type conversion happens.
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 8: More Comparisons</div>
+                    <div class="code-block">
+                        console.log("hello" == "hello");    // true<br/>
+                        console.log("hello" === "hello");   // true<br/>
+                        console.log("10" == 10);            // true (loose)<br/>
+                        console.log("10" === 10);           // false (strict)<br/>
+                        console.log(true == 1);             // true (loose)<br/>
+                        console.log(true === 1);            // false (strict)
+                    </div>
+                    <div class="output-box">
+                        Output: true<br>Output: true<br>Output: true<br>Output: false<br>Output: true<br>Output: false
+                    </div>
+                    <div class="explanation">
+                        Different data types show the difference between == and === Strict equality is safer and more predictable.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Logical Operators</h2>
+                <p style="margin-bottom: 20px;">
+                    Logical operators combine boolean values and return boolean results. They're used for complex conditional logic.
+                </p>   
+
+                <h3>AND (&&) - All conditions must be true</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 1</div>
+                    <div class="code-block">
+                        console.log(true && true);    // true<br/>
+                        console.log(true && false);   // false<br/>
+                        console.log(false && false);  // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: false<br>Output: false</div>
+                    <div class="explanation">AND returns true only when BOTH values are true</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 2</div>
+                    <div class="code-block">
+                        let age = 25;<br/>
+                        let hasLicense = true;<br/>
+                        console.log(age > 18 && hasLicense); // true
+                    </div>
+                    <div class="output-box">Output: true</div>
+                    <div class="explanation">Both conditions are true, so the result is true</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 3</div>
+                    <div class="code-block">
+                        let score = 50;<br/>
+                        let passed = score >= 40;<br/>
+                        let qualified = score >= 60;<br/>
+                        console.log(passed && qualified); // false
+                    </div>
+                    <div class="output-box">Output: false</div>
+                    <div class="explanation">First condition is true but second is false. AND returns false</div>
+                </div>  
+
+                <h3>OR (||) - At least one condition must be true</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 4</div>
+                    <div class="code-block">
+                        console.log(true || true);    // true<br/>
+                        console.log(true || false);   // true<br/>
+                        console.log(false || false);  // false
+                    </div>
+                    <div class="output-box">Output: true<br>Output: true<br>Output: false</div>
+                    <div class="explanation">OR returns true if AT LEAST ONE value is true</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 5</div>
+                    <div class="code-block">
+                        let isStudent = false;<br/>
+                        let isTeacher = true;<br/>
+                        console.log(isStudent || isTeacher); // true
+                    </div>
+                    <div class="output-box">Output: true</div>
+                    <div class="explanation">One condition is true, so OR returns true</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 6</div>
+                    <div class="code-block">
+                        let hasPassport = false;<br/>
+                        let hasVisa = false;<br/>
+                        console.log(hasPassport || hasVisa); // false
+                    </div>
+                    <div class="output-box">Output: false</div>
+                    <div class="explanation">Both conditions are false, so OR returns false</div>
+                </div>
+                
+                <h3>NOT (!) - Inverts/Negates boolean value</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 7</div>
+                    <div class="code-block">
+                        console.log(!true);   // false<br/>
+                        console.log(!false);  // true<br/>
+                        console.log(!!true);  // true (double negation)
+                    </div>
+                    <div class="output-box">Output: false<br>Output: true<br>Output: true</div>
+                    <div class="explanation">NOT inverts the boolean value. Double NOT returns original</div>
+                </div>
+                
+                <div class="operator-card">
+                    <div class="operator-num">Example 8</div>
+                    <div class="code-block">
+                        let isEmpty = true;<br/>
+                        console.log(!isEmpty); // false<br/>
+                        if (!isEmpty) {<br/>
+                            console.log("Container is not empty");<br/>
+                        } else {<br/>
+                            console.log("Container is empty");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: false<br>Output: Container is empty</div>
+                    <div class="explanation">NOT is useful in conditional statements to check opposite conditions</div>
+                </div>
+                <div class="operator-card">
+                    <div class="operator-num">Example 9</div>
+                    <div class="code-block">
+                        let hasAdmin = false;<br/>
+                        let hasUser = true;<br/>
+                        console.log(!hasAdmin && hasUser); // true<br/>
+                        console.log(!hasAdmin || !hasUser); // true
+                    </div>
+                    <div class="output-box">Output: true<br>Output: true</div>
+                    <div class="explanation">NOT can be combined with AND/OR for complex logic</div>
+                </div>
+                <div class="operator-card">
+                    <div class="operator-num">Example 10</div>
+                    <div class="code-block">
+                        let canApply = (age >= 18) && (noOutstandingDebt) && (!isBlacklisted);<br/>
+                        let canVote = (age >= 18) && (isCitizen);<br/>
+                        let needsReview = !approvedByManager || flaggedForAudit;
+                    </div>
+                    <div class="explanation">Complex logical expressions combining AND, OR and NOT for real-world scenarios</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Assignment Operators</h2>
+                <p style="margin-bottom: 20px;">
+                    Assignment operators assign or modify values. They provide shorthand ways to perform operations.
+                </p>
+                
+                <h3>Basic Assignment (=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 1</div>
+                    <div class="code-block">
+                        let x = 10;
+                        console.log(x); // 10
+                        let name = "Suryansh";
+                        console.log(name); // Suryansh
+                    </div>
+                    <div class="output-box">Output: 10<br>Output: Suryansh</div>
+                    <div class="explanation">= assigns a value to a variable</div>
+                </div>                
+                <h3>Add and Assign (+=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 2</div>
+                    <div class="code-block">
+                        let a = 20;<br/>
+                        a += 5;  // equivalent to a = a + 5<br/>
+                        console.log(a); // 25
+                    </div>
+                    <div class="output-box">Output: 25</div>
+                    <div class="explanation">a += 5 adds 5 to a and assigns the result back to a</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 3</div>
+                    <div class="code-block">
+                        let sum = 100;<br/>
+                        sum += 25;<br/>
+                        sum += 50;<br/>
+                        console.log(sum); // 175
+                    </div>
+                    <div class="output-box">Output: 175</div>
+                    <div class="explanation">Multiple += operations accumulate values: 100 + 25 + 50 = 175</div>
+                </div>                
+                <h3>Subtract and Assign (-=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 4</div>
+                    <div class="code-block">
+                        let b = 50;<br/>
+                        b -= 15;  // equivalent to b = b - 15<br/>
+                        console.log(b); // 35
+                    </div>
+                    <div class="output-box">Output: 35</div>
+                    <div class="explanation">b -= 15 subtracts 15 from b and assigns the result back</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 5</div>
+                    <div class="code-block">
+                        let balance = 1000;<br/>
+                        balance -= 200;<br/>
+                        balance -= 150;<br/>
+                        console.log(balance); // 650
+                    </div>
+                    <div class="output-box">Output: 650</div>
+                    <div class="explanation">Multiple -= operations reduce balance: 1000 - 200 - 150 = 650</div>
+                </div>                
+                <h3>Multiply and Assign (*=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 6</div>
+                    <div class="code-block">
+                        let c = 8;<br/>
+                        c *= 3;  // equivalent to c = c * 3<br/>
+                        console.log(c); // 24
+                    </div>
+                    <div class="output-box">Output: 24</div>
+                    <div class="explanation">c *= 3 multiplies c by 3 and assigns the result back</div>
+                </div>                
+                <h3>Divide and Assign (/=)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 7</div>
+                    <div class="code-block">
+                        let d = 100;<br/>
+                        d /= 4;  // equivalent to d = d / 4<br/>
+                        console.log(d); // 25
+                    </div>
+                    <div class="output-box">Output: 25</div>
+                    <div class="explanation">d /= 4 divides d by 4 and assigns the result back</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 8</div>
+                    <div class="code-block">
+                        let price = 200;<br/>
+                        price *= 0.9;  // Apply 10% discount<br/>
+                        console.log(price); // 180
+                    </div>
+                    <div class="output-box">Output: 180</div>
+                    <div class="explanation">Assignment operators useful for discounts: 200 * 0.9 = 180</div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 9</div>
+                    <div class="code-block">
+                        let total = 500;<br/>
+                        total += 100;  // Add tax<br/>
+                        total -= 50;   // Add discount<br/>
+                        total *= 0.8;  // Adjust<br/>
+                        console.log(total); // 352
+                    </div>
+                    <div class="output-box">Output: 352</div>
+                    <div class="explanation">Chaining multiple assignment operators for calculations</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Increment and Decrement Operators</h2>
+                <p style="margin-bottom: 20px;">
+                    These operators increase or decrease a value by 1. The position matters: prefix (++a) vs postfix (a++)
+                </p>                
+                <h3>Understanding ++a (Pre-increment) vs a++ (Post-increment)</h3>
+                <div class="operator-card">
+                    <div class="operator-num">Example 1: ++a (Pre-increment)</div>
+                    <div class="code-block">
+                        let x = 5;<br/>
+                        let result = ++x;  // Increment FIRST, then return<br/>
+                        console.log("x: " + x);        // x: 6<br/>
+                        console.log("result: " + result); // result: 6<br/>
+                    </div>
+                    <div class="output-box">Output: x: 6<br>Output: result: 6</div>
+                    <div class="explanation">
+                        ++x increments x to 6, THEN returns 6 to result. Both x and result are 6.
+                        Step 1: x becomes 6<br>
+                        Step 2: Return 6 to result
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 2: a++ (Post-increment)</div>
+                    <div class="code-block">
+                        let y = 5;<br/>
+                        let result = y++;  // Return FIRST, then increment<br/>
+                        console.log("y: " + y);        // y: 6<br/>
+                        console.log("result: " + result); // result: 5
+                    </div>
+                    <div class="output-box">Output: y: 6<br>Output: result: 5</div>
+                    <div class="explanation">
+                        y++ returns the original value 5 to result, THEN increments y to 6.
+                        Step 1: Return 5 to result<br>
+                        Step 2: y becomes 6
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 3: ++a in Loop</div>
+                    <div class="code-block">
+                        for (let i = 1; i <= 3; i++) {<br/>
+                            console.log(i);<br/>
+                        }<br/>
+                        // Output: 1, 2, 3<br/>
+                        // Step-by-step: i=1 (print), i++→i=2 (print), i++→i=3 (print), i++→i=4 (loop ends)
+                    </div>
+                    <div class="output-box">Output: 1<br>Output: 2<br>Output: 3</div>
+                    <div class="explanation">
+                        In loops, i++ is typically used because the return value isn't needed.
+                        Loop increments: 1→2→3→4(exit)
+                    </div>
+                </div>
+                <div class="operator-card">
+                    <div class="operator-num">Example 4: Decrement --a</div>
+                    <div class="code-block">
+                        let count = 10;<br/>
+                        --count;  // Pre-decrement<br/>
+                        console.log(count); // 9<br/><br/>
+
+                        let num = 10;<br/>
+                        let result = num--;  // Post-decrement<br/>
+                        console.log("num: " + num);      // num: 9<br/>
+                        console.log("result: " + result); // result: 10
+                    </div>
+                    <div class="output-box">Output: 9<br>Output: num: 9<br>Output: result: 10</div>
+                    <div class="explanation">
+                        Decrement works similarly to increment. --num reduces first, num-- reduces after.
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 5: Countdown</div>
+                    <div class="code-block">
+                        let countdown = 5;<br/>
+                        console.log(countdown--); // 5<br/>
+                        console.log(countdown--); // 4<br/>
+                        console.log(countdown--); // 3<br/>
+                        console.log(countdown--); // 2<br/>
+                        console.log(countdown--); // 1<br/>
+                        console.log(countdown--); // 0
+                    </div>
+                    <div class="output-box">Output: 5<br>Output: 4<br>Output: 3<br>Output: 2<br>Output: 1<br>Output: 0</div>
+                    <div class="explanation">
+                        Each countdown-- prints current value, then decrements.
+                        5→4→3→2→1→0
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 6: Complex Expression</div>
+                    <div class="code-block">
+                        let a = 5;<br/>
+                        let b = 10;<br/>
+                        let result = ++a + b++;<br/>
+                        // ++a: a becomes 6, returns 6<br/>
+                        // b++: returns 10, then b becomes 11<br/>
+                        // result = 6 + 10 = 16<br/>
+                        console.log("a: " + a);        // a: 6<br/>
+                        console.log("b: " + b);        // b: 11<br/>
+                        console.log("result: " + result); // result: 16
+                    </div>
+                    <div class="output-box">Output: a: 6<br>Output: b: 11<br>Output: result: 16</div>
+                    <div class="explanation">
+                        Mixing pre and post increments:
+                        ++a returns 6 (a becomes 6)<br>
+                        b++ returns 10 (b becomes 11)<br>
+                        6 + 10 = 16
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 7: Array Index Increment</div>
+                    <div class="code-block">
+                        let arr = ["a", "b", "c"];<br/>
+                        let index = 0;<br/>
+                        console.log(arr[index++]); // "a" (then index becomes 1)<br/>
+                        console.log(arr[index++]); // "b" (then index becomes 2)<br/>
+                        console.log(arr[index++]); // "c" (then index becomes 3)<br/>
+                        console.log("Final index: " + index); // Final index: 3
+                    </div>
+                    <div class="output-box">Output: a<br>Output: b<br>Output: c<br>Output: Final index: 3</div>
+                    <div class="explanation">
+                        Post-increment is common with array access because you use current index, then move to next.
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 8: Practical Counter</div>
+                    <div class="code-block">
+                        let counter = 0;<br/>
+                        counter++;  // counter: 1<br/>
+                        counter++;  // counter: 2<br/>
+                        counter++;  // counter: 3<br/>
+                        console.log("Count: " + counter); // Count: 3<br/><br/>
+
+                        // Reset and decrement<br/>
+                        counter = 3;<br/>
+                        counter--;  // counter: 2<br/>
+                        counter--;  // counter: 1<br/>
+                        console.log("New Count: " + counter); // New Count: 1
+                    </div>
+                    <div class="output-box">Output: Count: 3<br>Output: New Count: 1</div>
+                    <div class="explanation">
+                        Common pattern: incrementing/decrementing counters for tracking.
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 9: Score Tracking</div>
+                    <div class="code-block">
+                        let playerScore = 0;<br/>
+                        // Player scores 10 points<br/>
+                        playerScore += 10;  // playerScore: 10<br/>
+                        // Bonus point<br/>
+                        ++playerScore;      // playerScore: 11<br/>
+                        console.log("Score: " + playerScore); // Score: 11<br/><br/>
+
+                        // Penalty<br/>
+                        playerScore--;<br/>
+                        console.log("Final Score: " + playerScore); // Final Score: 10<br/>
+                    </div>
+                    <div class="output-box">Output: Score: 11<br>Output: Final Score: 10</div>
+                    <div class="explanation">
+                        Real-world use: tracking game scores with increments and decrements.
+                    </div>
+                </div>                
+                <div class="operator-card">
+                    <div class="operator-num">Example 10: Loop Counter</div>
+                    <div class="code-block">
+                        let n = 0;<br/>
+                        while (n < 3) {<br/>
+                            console.log("Iteration: " + ++n);<br/>
+                        }<br/>
+                        // Using ++n ensures n is incremented before being used<br/>
+                        // n=0: ++n→1 (print), n=1: ++n→2 (print), n=2: ++n→3 (print), n=3: exit<br/>
+                    </div>
+                    <div class="output-box">Output: Iteration: 1<br>Output: Iteration: 2<br>Output: Iteration: 3</div>
+                    <div class="explanation">
+                        Pre-increment in loops ensures counter is updated before use.
+                        Iterations: 1→2→3
+                    </div>
+                </div>
+            </div>            
+        </div>
+        
+        <footer>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>

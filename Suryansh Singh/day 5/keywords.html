@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keywords</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }        
+        header > h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #667eea;
+        }        
+        nav > a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav > a:hover {
+            color: #764ba2;
+        }        
+        .main-content {
+            padding: 40px 30px;
+        }        
+        .section {
+            margin-bottom: 40px;
+        }        
+        .section > h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }        
+        .keyword-section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .keyword-title {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .keyword-content {
+            margin-bottom: 15px;
+        }        
+        .label {
+            color: #764ba2;
+            font-weight: bold;
+            display: inline-block;
+            min-width: 120px;
+            margin-top: 10px;
+        }        
+        .example-code {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+            margin: 8px 0;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }        
+        .definition-box {
+            background: #f0f4ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.8;
+        }        
+        .important {
+            background: #ffe6e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }        
+        .output {
+            background: #e8f5e9;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }        
+        .explanation {
+            background: #fff9e6;
+            padding: 12px;
+            border-radius: 3px;
+            margin: 8px 0;
+        }        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: 0.3s;
+        }        
+        .back-btn:hover {
+            background: #764ba2;
+        }        
+        footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Keywords</h1>
+        </header>
+        <nav>
+            <a href="tokens.html">Tokens</a>
+            <a href="datatypes.html">Data Types & Variables</a>
+            <a href="functions.html">Functions</a>
+            <a href="operators.html">Operators</a>
+            <a href="statements.html">Statements </a>
+            <a href="project.html">Mini Project</a>
+            <a href="comparison.html">Comparison (Bonus)</a>
+        </nav>  
+        <div class="main-content">
+            <div class="section">
+                <h2>What are Keywords ?</h2>
+                <div class="definition-box">
+                    <p>
+                        Keywords are reserved words in JavaScript that have special meaning and predefined purposes. They are part 
+                        of the JavaScript language syntax and cannot be used as variable names, function names or identifiers. When the 
+                        JavaScript interpreter encounters a keyword, it treats it as a language construct rather than a user-defined name.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Examples of keywords include: <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">var, let, const, function, if, else, for, while, return, true, false, null, undefined, class, new, this, typeof</span> and many more. 
+                        Each keyword has a specific role in the language. For instance, <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">if</span> is used for conditional logic, 
+                        <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">for</span> is used for loops and <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">function</span> is used to declare functions.
+                    </p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Why Can't Keywords Be Used as Variable Names ?</h2>
+                <div class="definition-box">
+                    <p>
+                        <strong>Reserved for Language Functionality:</strong> Keywords are reserved by JavaScript for its core functionality. 
+                        If you could use them as variable names, it would create ambiguity. For example, if you could create a variable named 
+                        <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">if</span>, the interpreter wouldn't know whether you're referring to the keyword 
+                        or your variable.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        <strong>Syntax Errors:</strong> Attempting to use a keyword as a variable name results in a syntax error and your 
+                        code will not execute. The JavaScript interpreter recognizes keywords immediately and won't allow them to be reassigned 
+                        or used as identifiers.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        <strong>Maintaining Code Clarity:</strong> By restricting keyword usage, the language maintains clarity and consistency. 
+                        You can always trust that a keyword will perform its intended function and you must use different names for your variables, 
+                        which encourages better naming practices.
+                    </p>
+                </div>
+                <div class="important">
+                    <strong>Invalid:</strong> <span style="color: red; font-weight: bold;">let if = 5;</span> (Syntax Error)<br>
+                    <strong>Valid:</strong> <span style="color: green; font-weight: bold;">let condition = 5;</span> (Correct)
+                </div>
+            </div>
+            <div class="section">
+                <h2>Important Keywords and Examples</h2>
+                <div class="keyword-section">
+
+                    <div class="keyword-title">VAR - Variable Declaration (Old Method)</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">var</span> is the original keyword for declaring variables in JavaScript. 
+                            It has function scope and can be redeclared and updated. However, <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">var</span> is considered outdated
+                            and modern JavaScript prefers <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span> and <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">const</span>.
+                        </p>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">var variableName = value;</div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 1: Basic Variable Declaration</div>
+                        <div class="example-code">
+                            var name = "Suryansh";<br/>
+                            var age = 19;<br/>
+                            console.log(name);<br/>
+                            console.log(age);<br/>
+                        </div>
+                        <div class="output">Output: Suryansh<br>Output: 19</div>
+                        <div class="explanation">
+                            Here, we declare two variables using <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">var</span>. 
+                            The first variable stores a string and the second stores a number. Variables declared with <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">var</span> 
+                            can be updated later in the program.
+                        </div>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Example 2: Redeclaring Variables</div>
+                        <div class="example-code">
+                            var count = 10;<br/>
+                            console.log(count); // 10<br/>
+                            var count = 20;     // Can redeclare<br/>
+                            console.log(count); // 20
+                        </div>
+                        <div class="output">Output: 10<br>Output: 20</div>
+                        <div class="explanation">
+                            Unlike <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span> and <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">const</span>, 
+                            variables declared with <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">var</span> can be redeclared. 
+                            However, this can lead to bugs and is not recommended in modern JavaScript.
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="keyword-section">
+                    <div class="keyword-title">LET - Block-Scoped Variable Declaration</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span> declares variables with block scope, meaning they only exist 
+                            within the block (inside curly braces) where they're declared. Variables declared with <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span> 
+                            can be updated but not redeclared. This is the modern way to declare variables.
+                        </p>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">let variableName = value;</div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 1: Basic let Declaration</div>
+                        <div class="example-code">
+                            let city = "Lucknow";<br/>
+                            let population = 4266929;<br/>
+                            console.log(city);<br/>
+                            console.log(population);<br/>
+                        </div>
+                        <div class="output">Output: Lucknow<br>Output: 4266929</div>
+                        <div class="explanation">
+                            Here, we declare two variables using <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span>. 
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span> keyword is preferred because it prevents accidental 
+                            redeclaration and provides better scoping.
+                        </div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 2: Block Scope with let</div>
+                        <div class="example-code">
+                            let x = 100;<br/>
+                            {<br/>
+                                let x = 50;  // Different x inside the block<br/>
+                                console.log(x); // 50<br/>
+                            }<br/>
+                            console.log(x);  // 100 (original x)
+                        </div>
+                        <div class="output">Output: 50<br>Output: 100</div>
+                        <div class="explanation">
+                            Variables declared with <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span> have block scope. 
+                            The x inside the block is different from the x outside. This prevents naming conflicts and makes code safer.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="keyword-section">
+                    <div class="keyword-title">CONST - Constant (Block-Scoped, Immutable)</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">const</span> declares constants that cannot be changed after initialization. 
+                            Like <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">let</span>, they have block scope and cannot be redeclared. 
+                            Use <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">const</span> by default for values that shouldn't change.
+                        </p>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">const constantName = value;</div>
+                    </div>            
+                    <div class="keyword-content">
+                        <div class="label">Example 1: Basic const Declaration</div>
+                        <div class="example-code">
+                            const PI = 3.14159;<br/>
+                            const COUNTRY = "India";<br/>
+                            console.log(PI);<br/>
+                            console.log(COUNTRY);
+                        </div>
+                        <div class="output">Output: 3.14159<br>Output: India</div>
+                        <div class="explanation">
+                            Constants are declared using <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">const</span>. 
+                            By convention, constant names are written in uppercase. Once declared, these values cannot be changed.
+                        </div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 2: Error When Reassigning Constant</div>
+                        <div class="example-code">
+                            const MAX_SCORE = 100;<br/>
+                            console.log(MAX_SCORE); // 100<br/>
+                            MAX_SCORE = 150; // Error: Assignment to constant variable
+                        </div>
+                        <div class="output">Output: 100<br>Error: TypeError: Assignment to constant variable</div>
+                        <div class="explanation">
+                            Attempting to reassign a constant results in an error. This is by design - <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">const</span> 
+                            ensures that values remain fixed throughout the program, preventing accidental modifications.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="keyword-section">
+                    <div class="keyword-title">IF - Conditional Statement</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">if</span> keyword executes a block of code only if a specified condition is true. 
+                            It's fundamental to controlling program flow based on conditions.
+                        </p>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">if (condition) {<br/>
+                            // code to execute if condition is true<br/>
+                        }</div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 1: Simple if Statement</div>
+                        <div class="example-code">
+                            let age = 18;<br/>
+                            if (age >= 18) {<br/>
+                                console.log("You are an adult");<br/>
+                            }
+                        </div>
+                        <div class="output">Output: You are an adult</div>
+                        <div class="explanation">
+                            The condition <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">age >= 18</span> is evaluated. 
+                            Since age is 18, the condition is true and the code inside the braces executes, printing "You are an adult".
+                        </div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 2: if with Comparison</div>
+                        <div class="example-code">
+                            let score = 75;<br/>
+                            if (score > 70) {<br/>
+                                console.log("Good performance!");<br/>
+                            }
+                        </div>
+                        <div class="output">Output: Good performance!</div>
+                        <div class="explanation">
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">if</span> statement checks if the score is greater than 70. 
+                            Since 75 > 70 is true, the console.log statement executes.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="keyword-section">
+                    <div class="keyword-title">ELSE - Alternative Condition</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">else</span> keyword specifies a block of code to execute 
+                            if the condition in an <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">if</span> statement is false. It provides an alternative path of execution.
+                        </p>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">if (condition) {<br/>
+                            // code if true<br/>
+                        } else {<br/>
+                            // code if false<br/>
+                        }</div>
+                    </div>                    
+                    <div class="keyword-content">
+                        <div class="label">Example 1: if-else Statement</div>
+                        <div class="example-code">
+                            let number = 5;<br/>
+                            if (number % 2 === 0) {<br/>
+                                console.log("Even number");<br/>
+                            } else {<br/>
+                                console.log("Odd number");<br/>
+                            }
+                        </div>
+                        <div class="output">Output: Odd number</div>
+                        <div class="explanation">
+                            The condition checks if the number is even (divisible by 2). Since 5 is odd, the condition is false 
+                            and the <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">else</span> block executes, printing "Odd number".
+                        </div>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Example 2: if-else with Strings</div>
+                        <div class="example-code">
+                            let username = "admin";<br/>
+                            if (username === "admin") {<br/>
+                                console.log("Welcome, Administrator!");<br/>
+                            } else {<br/>
+                                console.log("Welcome, User!");<br/>
+                            }
+                        </div>
+                        <div class="output">Output: Welcome, Administrator!</div>
+                        <div class="explanation">
+                            The condition checks if the username equals "admin". Since it does, the <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">if</span> 
+                            block executes. The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">else</span> would execute if the username were different.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="keyword-section">
+                    <div class="keyword-title">FOR - Loop Statement</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">for</span> keyword creates a loop that repeats a block of code 
+                            a specific number of times. It's useful when you know how many times you need to repeat an action.
+                        </p>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">for (initialization; condition; increment) {<br/>
+                            // code to repeat<br/>
+                        }</div>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Example 1: Basic for Loop</div>
+                        <div class="example-code">
+                            for (let i = 1; i <= 5; i++) {<br/>
+                                console.log(i);<br/>
+                            }<br/>
+                        </div>
+                        <div class="output">Output: 1, 2, 3, 4, 5</div>
+                        <div class="explanation">
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">for</span> loop initializes i to 1, continues while i ≤ 5, 
+                            and increments i by 1 each iteration. This prints numbers 1 through 5.
+                        </div>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Example 2: Looping Through Array</div>
+                        <div class="example-code">
+                            let colors = ["red", "green", "blue"];<br/>
+                            for (let i = 0; i < colors.length; i++) {<br/>
+                                console.log(colors[i]);<br/>
+                            }
+                        </div>
+                        <div class="output">Output: red<br>Output: green<br>Output: blue</div>
+                        <div class="explanation">
+                            The <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">for</span> loop iterates through each element of the array. 
+                            The condition <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">i < colors.length</span> ensures we don't go beyond the array bounds.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="keyword-section">
+                    <div class="keyword-title">forEach() - Array Iteration Method</div>
+                    <div class="keyword-content">
+                        <div class="label">Definition:</div>
+                        <p>
+                            <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">forEach</span> is an array method (not technically a keyword but a built-in function) 
+                            that executes a function for each element in an array. It's a modern alternative to traditional for loops.
+                        </p>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Syntax:</div>
+                        <div class="example-code">array.forEach(function(element, index) {<br/>
+                            // code to execute for each element<br/>
+                        });</div>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Example 1: forEach with Simple Function</div>
+                        <div class="example-code">
+                            let fruits = ["apple", "banana", "mango"];<br/>
+                            fruits.forEach(function(fruit) {<br/>
+                                console.log(fruit);<br/>
+                            });
+                        </div>
+                        <div class="output">Output: apple<br>Output: banana<br>Output: mango</div>
+                        <div class="explanation">
+                            <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">forEach</span> automatically calls the function for each element. 
+                            The parameter <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">fruit</span> holds the current element value. 
+                            No manual loop management is needed.
+                        </div>
+                    </div>
+                    <div class="keyword-content">
+                        <div class="label">Example 2: forEach with Index</div>
+                        <div class="example-code">
+                            let numbers = [10, 20, 30];<br/>
+                            numbers.forEach(function(num, index) {<br/>
+                                console.log("Index " + index + ": " + num);<br/>
+                            });
+                        </div>
+                        <div class="output">Output: Index 0: 10<br>Output: Index 1: 20<br>Output: Index 2: 30</div>
+                        <div class="explanation">
+                            <span style="background: #fffacd; padding: 2px 6px; border-radius: 3px;">forEach</span> provides both the element and its index. 
+                            The index parameter gives the position of the element in the array, making it easy to track both value and position.
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <footer>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>

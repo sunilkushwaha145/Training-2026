@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statements</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 2px solid #667eea;
+        }        
+        nav > a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }        
+        nav > a:hover {
+            color: #764ba2;
+        }        
+        .main-content {
+            padding: 40px 30px;
+        }        
+        .section {
+            margin-bottom: 50px;
+        }        
+        .section > h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        
+        .example-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }        
+        .example-num {
+            background: #667eea;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }        
+        .problem {
+            background: #e3f2fd;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }        
+        .output-box {
+            background: #e8f5e9;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }        
+        .syntax-box {
+            background: #f0f4ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            line-height: 1.8;
+        }        
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: 0.3s;
+            cursor: pointer;
+        }        
+        .btn:hover {
+            background: #764ba2;
+        }        
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: 0.3s;
+        }        
+        .back-btn:hover {
+            background: #764ba2;
+        }        
+        footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Control Flow Statements</h1>
+        </header>
+        
+        <nav>
+            <a href="tokens.html">Tokens</a>
+            <a href="keywords.html">Keywords</a>
+            <a href="datatypes.html">Data Types & Variables</a>
+            <a href="functions.html">Functions</a>
+            <a href="operators.html">Operators</a>
+            <a href="project.html">Mini Project</a>
+            <a href="comparison.html">Comparison (Bonus)</a>
+        </nav>
+        
+        <div class="main-content">
+            <div class="section">
+                <h2>IF Statement</h2>
+                <div class="syntax-box">
+                    <strong>Syntax:</strong><br>
+                    if (condition) {<br>
+                    &nbsp;&nbsp;// code to execute if condition is true<br>
+                    }
+                </div>
+                <p style="margin-bottom: 20px;">
+                    The IF statement executes code only if a specified condition is true. If the condition is false, 
+                    the code inside the if block is skipped.
+                </p>
+                
+                <div class="example-card">
+                    <div class="example-num">Example 1: Simple Number Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if a number is positive</div>
+                    <div class="code-block">
+                        let num = 10;<br/>
+                        if (num > 0) {<br/>
+                            console.log("The number is positive");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: The number is positive</div>
+                </div>
+                <div class="example-card">
+                    <div class="example-num">Example 2: Age Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if age is adult (18+)</div>
+                    <div class="code-block">
+                        let age = 20;<br/>
+                        if (age >= 18) {<br/>
+                            console.log("You are an adult");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: You are an adult</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 3: String Comparison</div>
+                    <div class="problem"><strong>Problem:</strong> Check if password is correct</div>
+                    <div class="code-block">
+                        let password = "secret123";<br/>
+                        if (password === "secret123") {<br/>
+                            console.log("Password is correct");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Password is correct</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 4: Multiple Conditions with AND</div>
+                    <div class="problem"><strong>Problem:</strong> Check if user can drive (age >= 18 AND has license)</div>
+                    <div class="code-block">
+                        let age = 25;<br/>
+                        let hasLicense = true;<br/>
+                        if (age >= 18 && hasLicense === true) {<br/>
+                            console.log("You can drive");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: You can drive</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 5: Empty Array Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if array is not empty</div>
+                    <div class="code-block">
+                        let arr = [1, 2, 3];<br/>
+                        if (arr.length > 0) {<br/>
+                            console.log("Array has elements");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Array has elements</div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-num">Example 6: Even Number Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if number is even</div>
+                    <div class="code-block">
+                        let num = 24;<br/>
+                        if (num % 2 === 0) {<br/>
+                            console.log("Number is even");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Number is even</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 7: Price Range Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if price is within budget</div>
+                    <div class="code-block">
+                        let price = 500;<br/>
+                        let budget = 1000;<br/>
+                        if (price <= budget) {<br/>
+                            console.log("Item is affordable");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Item is affordable</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 8: Multiple OR Conditions</div>
+                    <div class="problem"><strong>Problem:</strong> Check if user is admin or moderator</div>
+                    <div class="code-block">
+                        let role = "admin";<br/>
+                        if (role === "admin" || role === "moderator") {<br/>
+                            console.log("You have special privileges");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: You have special privileges</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 9: NOT Operator Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if container is not empty</div>
+                    <div class="code-block">
+                        let isEmpty = false;<br/>
+                        if (!isEmpty) {<br/>
+                            console.log("Container has items");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Container has items</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 10: Range Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if score is in passing range (40-100)</div>
+                    <div class="code-block">
+                        let score = 75;<br/>
+                        if (score >= 40 && score <= 100) {<br/>
+                            console.log("Score is valid and passing");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Score is valid and passing</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>IF-ELSE Statement</h2>
+                <div class="syntax-box">
+                    <strong>Syntax:</strong><br>
+                    if (condition) {<br>
+                    &nbsp;&nbsp;// code if condition is true<br>
+                    } else {<br>
+                    &nbsp;&nbsp;// code if condition is false<br>
+                    }
+                </div>
+                <p style="margin-bottom: 20px;">
+                    The IF-ELSE statement executes one block of code if the condition is true and another block if it's false. 
+                    This provides two alternative paths of execution.
+                </p>                
+                <div class="example-card">
+                    <div class="example-num">Example 1: Pass/Fail Check</div>
+                    <div class="problem"><strong>Problem:</strong> Determine if student passed (score >= 40)</div>
+                    <div class="code-block">
+                        let score = 35;<br/>
+                        if (score >= 40) {<br/>
+                            console.log("PASS");<br/>
+                        } else {<br/>
+                            console.log("FAIL");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: FAIL</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 2: Even or Odd</div>
+                    <div class="problem"><strong>Problem:</strong> Check if number is even or odd</div>
+                    <div class="code-block">
+                        let num = 7;<br/>
+                        if (num % 2 === 0) {<br/>
+                            console.log("Even number");<br/>
+                        } else {<br/>
+                            console.log("Odd number");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Odd number</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 3: Age Category</div>
+                    <div class="problem"><strong>Problem:</strong> Determine if person is adult or minor</div>
+                    <div class="code-block">
+                        let age = 15;<br/>
+                        if (age >= 18) {<br/>
+                            console.log("You are an adult");<br/>
+                        } else {<br/>
+                            console.log("You are a minor");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: You are a minor</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 4: Login Verification</div>
+                    <div class="problem"><strong>Problem:</strong> Check if username and password match</div>
+                    <div class="code-block">
+                        let username = "user123";<br/>
+                        let password = "pass123";<br/>
+                        if (username === "admin" && password === "admin123") {<br/>
+                            console.log("Login successful");<br/>
+                        } else {<br/>
+                            console.log("Invalid credentials");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Invalid credentials</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 5: Voting Eligibility</div>
+                    <div class="problem"><strong>Problem:</strong> Check if person can vote (age >= 18)</div>
+                    <div class="code-block">
+                        let age = 22;<br/>
+                        if (age >= 18) {<br/>
+                            console.log("You are eligible to vote");<br/>
+                        } else {<br/>
+                            console.log("You are not eligible to vote");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: You are eligible to vote</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 6: Item Availability</div>
+                    <div class="problem"><strong>Problem:</strong> Check if item is in stock</div>
+                    <div class="code-block">
+                        let stock = 0;<br/>
+                        if (stock > 0) {<br/>
+                            console.log("Item is available");<br/>
+                        } else {<br/>
+                            console.log("Item is out of stock");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Item is out of stock</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 7: Discount Eligibility</div>
+                    <div class="problem"><strong>Problem:</strong> Apply discount for purchases over $100</div>
+                    <div class="code-block">
+                        let amount = 150;<br/>
+                        if (amount > 100) {<br/>
+                            console.log("10% Discount applied");<br/>
+                        } else {<br/>
+                            console.log("No discount");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: 10% Discount applied</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 8: Temperature Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if temperature is hot or cold</div>
+                    <div class="code-block">
+                        let temp = 15;<br/>
+                        if (temp > 20) {<br/>
+                            console.log("It's hot");<br/>
+                        } else {<br/>
+                            console.log("It's cold");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: It's cold</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 9: Account Status</div>
+                    <div class="problem"><strong>Problem:</strong> Check if account is active</div>
+                    <div class="code-block">
+                        let isActive = true;<br/>
+                        if (isActive) {<br/>
+                            console.log("Account is active");<br/>
+                        } else {<br/>
+                            console.log("Account is inactive");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Account is active</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 10: Priority Level</div>
+                    <div class="problem"><strong>Problem:</strong> Check if task is high priority</div>
+                    <div class="code-block">
+                        let priority = 3;<br/>
+                        if (priority === 1) {<br/>
+                            console.log("High priority task");<br/>
+                        } else {<br/>
+                            console.log("Normal priority task");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Normal priority task</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>NESTED IF</h2>
+                <div class="syntax-box">
+                    <strong>Syntax:</strong><br>
+                    if (condition1) {<br>
+                    &nbsp;&nbsp;if (condition2) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// code<br>
+                    &nbsp;&nbsp;}<br>
+                    }
+                </div>
+                <p style="margin-bottom: 20px;">
+                    Nested IF statements are IF statements inside another IF statement. This allows for more complex decision-making 
+                    with multiple levels of conditions.
+                </p>                
+                <div class="example-card">
+                    <div class="example-num">Example 1: Voting and License Check</div>
+                    <div class="problem"><strong>Problem:</strong> Check if person can vote (age >= 18) AND is a citizen (true)</div>
+                    <div class="code-block">
+                        let age = 25;<br/>
+                        let isCitizen = true;<br/>
+                        if (age >= 18) {<br/>
+                            if (isCitizen) {<br/>
+                                console.log("You can vote");<br/>
+                            }<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: You can vote</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 2: Bank Withdrawal</div>
+                    <div class="problem"><strong>Problem:</strong> Can withdraw if account exists AND balance is sufficient</div>
+                    <div class="code-block">
+                        let accountExists = true;<br/>
+                        let balance = 5000;<br/>
+                        let withdrawal = 2000;<br/>
+                        if (accountExists) {<br/>
+                            if (balance >= withdrawal) {<br/>
+                                console.log("Withdrawal approved");<br/>
+                            }<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Withdrawal approved</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 3: Employee Bonus Eligibility</div>
+                    <div class="problem"><strong>Problem:</strong> Bonus if employee worked > 1 year AND performance is good</div>
+                    <div class="code-block">
+                        let yearsWorked = 3;<br/>
+                        let performanceRating = "good";<br/>
+                        if (yearsWorked > 1) {<br/>
+                            if (performanceRating === "good") {<br/>
+                                console.log("Eligible for bonus");<br/>
+                            }<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Eligible for bonus</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 4: Scholarship Eligibility</div>
+                    <div class="problem"><strong>Problem:</strong> Scholarship if marks >= 80 AND family income is low</div>
+                    <div class="code-block">
+                        let marks = 85;<br/>
+                        let familyIncome = "low";<br/>
+                        if (marks >= 80) {<br/>
+                            if (familyIncome === "low") {<br/>
+                                console.log("Scholarship awarded");<br/>
+                            }<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Scholarship awarded</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 5: Access Control</div>
+                    <div class="problem"><strong>Problem:</strong> Access granted if logged in AND role is admin</div>
+                    <div class="code-block">
+                        let isLoggedIn = true;<br/>
+                        let role = "admin";<br/>
+                        if (isLoggedIn) {<br/>
+                            if (role === "admin") {<br/>
+                                console.log("Access granted to admin panel");<br/>
+                            }<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Access granted to admin panel</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>LADDER IF (If-Else-If)</h2>
+                <div class="syntax-box">
+                    <strong>Syntax:</strong><br>
+                    if (condition1) {<br>
+                    &nbsp;&nbsp;// code<br>
+                    } else if (condition2) {<br>
+                    &nbsp;&nbsp;// code<br>
+                    } else if (condition3) {<br>
+                    &nbsp;&nbsp;// code<br>
+                    } else {<br>
+                    &nbsp;&nbsp;// code<br>
+                    }
+                </div>
+                <p style="margin-bottom: 20px;">
+                    Ladder IF (If-Else-If) allows checking multiple conditions in sequence. The first true condition executes 
+                    and the rest are skipped. This is perfect for multiple mutually exclusive choices.
+                </p>                
+                <div class="example-card">
+                    <div class="example-num">Example 1: Grade Assignment</div>
+                    <div class="problem"><strong>Problem:</strong> Assign grade based on marks</div>
+                    <div class="code-block">
+                        let marks = 75;<br/>
+                        if (marks >= 90) {<br/>
+                            console.log("Grade: A");<br/>
+                        } else if (marks >= 80) {<br/>
+                            console.log("Grade: B");<br/>
+                        } else if (marks >= 70) {<br/>
+                            console.log("Grade: C");<br/>
+                        } else if (marks >= 60) {<br/>
+                            console.log("Grade: D");<br/>
+                        } else {<br/>
+                            console.log("Grade: F");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Grade: C</div>
+                </div>
+                <div class="example-card">
+                    <div class="example-num">Example 2: Age Category</div>
+                    <div class="problem"><strong>Problem:</strong> Categorize person by age group</div>
+                    <div class="code-block">
+                        let age = 35;<br/>
+                        if (age < 13) {<br/>
+                            console.log("Child");<br/>
+                        } else if (age < 18) {<br/>
+                            console.log("Teenager");<br/>
+                        } else if (age < 60) {<br/>
+                            console.log("Adult");<br/>
+                        } else {<br/>
+                            console.log("Senior");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Adult</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 3: Traffic Light System</div>
+                    <div class="problem"><strong>Problem:</strong> Display action based on traffic light</div>
+                    <div class="code-block">
+                        let light = "yellow";<br/>
+                        if (light === "red") {<br/>
+                            console.log("STOP");<br/>
+                        } else if (light === "yellow") {<br/>
+                            console.log("WAIT");<br/>
+                        } else if (light === "green") {<br/>
+                            console.log("GO");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: WAIT</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 4: Salary Range Classification</div>
+                    <div class="problem"><strong>Problem:</strong> Classify salary into brackets</div>
+                    <div class="code-block">
+                        let salary = 50000;<br/>
+                        if (salary < 25000) {<br/>
+                            console.log("Low salary");<br/>
+                        } else if (salary < 50000) {<br/>
+                            console.log("Medium salary");<br/>
+                        } else if (salary < 100000) {<br/>
+                            console.log("High salary");<br/>
+                        } else {<br/>
+                            console.log("Very high salary");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: High salary</div>
+                </div>                
+                <div class="example-card">
+                    <div class="example-num">Example 5: Ticket Price by Age</div>
+                    <div class="problem"><strong>Problem:</strong> Determine ticket price based on age</div>
+                    <div class="code-block">
+                        let age = 8;<br/>
+                        if (age < 5) {<br/>
+                            console.log("Ticket: Free");<br/>
+                        } else if (age < 12) {<br/>
+                            console.log("Ticket: $5 (Child)");<br/>
+                        } else if (age < 60) {<br/>
+                            console.log("Ticket: $10 (Adult)");<br/>
+                        } else {<br/>
+                            console.log("Ticket: $7 (Senior)");<br/>
+                        }
+                    </div>
+                    <div class="output-box">Output: Ticket: $5 (Child)</div>
+                </div>
+            </div>            
+        </div>
+        <footer>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>
