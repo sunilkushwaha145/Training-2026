@@ -56,14 +56,14 @@ Training-2026/
 
 | # | Student Name        | GitHub                         | Status     |
 |---|---------------------|-------------------------------|------------|
-| 1 | Abhishek Gupta      | [@Not Available](https://github.com/)             | ✅ Active  |
-| 2 | Anmol Tiwari        | [@Not Available](https://github.com/)               | ✅ Active  |
-| 3 | Priyanka Naugariya  | [@Not Available](https://github.com/)         | ✅ Active  |
-| 4 | Reeta Yadav         | [@reetayadav18](https://github.com/reetayadav18)                | ✅ Active  |
-| 5 | Rohini Kushwaha     | [@Not Available](https://github.com/)            | ✅ Active  |
-| 6 | Rubi Jain           | [@Not Available](https://github.com/)                  | ✅ Active  |
-| 7 | Santosh Yadav       | [@Not Available](https://github.com/)              | ✅ Active  |
-| 8 | Suryansh Singh      | [@suryanshsingh07](https://github.com/suryanshsingh07)             | ✅ Active  |
+| 1 | Abhishek Gupta      | [@Not Available](https://github.com/)             | 🔴 Inactive  |
+| 2 | Anmol Tiwari        | [@Not Available](https://github.com/)               | 🔴 Inactive  |
+| 3 | Priyanka Naugariya  | [@Not Available](https://github.com/)         | 🔴 Inactive  |
+| 4 | Reeta Yadav         | [@reetayadav18](https://github.com/reetayadav18)                | 🟢 Active  |
+| 5 | Rohini Kushwaha     | [@Not Available](https://github.com/)            | 🔴 Inactive  |
+| 6 | Rubi Jain           | [@Not Available](https://github.com/)                  | 🔴 Inactive  |
+| 7 | Santosh Yadav       | [@Not Available](https://github.com/)              | 🟢 Active  |
+| 8 | Suryansh Singh      | [@suryanshsingh07](https://github.com/suryanshsingh07)             | 🟢 Active  |
 
 ---
 
@@ -91,7 +91,44 @@ Training-2026/
 | Integration | AJAX, JWT Authentication, Role-Based Access |
 
 ### 🔷 4 — Real-World Projects
-- Not yet started
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| Billing Software | A full-stack billing management system to manage customers, products, invoices, sales records and reports | 🔄 In Progress |
+
+### 🧾 Billing Software — Project Modules
+
+The project includes the following modules:
+
+- 👥 **Customer Management**
+  - Add, update and manage customer details
+
+- 📦 **Product Management**
+  - Product listing, categories, pricing and stock management
+
+- 🧾 **Invoice & Billing System**
+  - Generate invoices
+  - Calculate taxes and totals
+  - Maintain billing history
+
+- 📊 **Reports & Dashboard**
+  - Sales reports
+  - Customer reports
+  - Business overview
+
+- 🔐 **Authentication & Authorization**
+  - User login system
+  - Role-based access control
+
+### 🛠️ Technologies Used
+
+| Layer | Technology |
+|------|------------|
+| Front-End | HTML5, CSS3, JavaScript, Bootstrap |
+| Back-End | C#, ASP.NET Core MVC / Web API |
+| Database | SQL Server |
+| ORM | Entity Framework Core |
+| Tools | Visual Studio 2026, Git, GitHub |
 
 ---
 
@@ -104,7 +141,7 @@ Training-2026/
 | **Languages**   | C#, HTML5, CSS3, JavaScript, SQL |
 | **Frameworks**  | ASP.NET Core 8, Entity Framework Core |
 | **Database**    | Microsoft SQL Server |
-| **Tools**       | Visual Studio 2022, VS Code, SSMS |
+| **Tools**       | Visual Studio 2026, VS Code, SSMS |
 | **Version Control** | Git, GitHub |
 | **API Testing** | Swagger UI, Postman |
 
