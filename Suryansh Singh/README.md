@@ -29,9 +29,9 @@
 |-----------|-------|
 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | Page structure and content |
 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | Styling — inline, internal, external |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | *(Coming soon)* |
-| ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white) | *(Coming soon)* |
-| ![.NET Core](https://img.shields.io/badge/.NET%20Core-512BD4?style=flat-square&logo=dotnet&logoColor=white) | *(Coming soon)* |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |  DOM manipulation, events, ES6, asynchronous programming |
+| ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white) | Object-Oriented Programming, collections, file handling, LINQ |
+| ![.NET Core](https://img.shields.io/badge/.NET%20Core-512BD4?style=flat-square&logo=dotnet&logoColor=white) | ASP.NET Core MVC, Web API, Razor Views, dependency injection |
 
 </div>
 
@@ -43,9 +43,9 @@
 |-------|-------|--------|
 | 🔷 1 | HTML5 Fundamentals | ✅ Completed |
 | 🔷 2 | CSS3 — Styling & Layouts | ✅ Completed |
-| 🔷 3 | JavaScript | 🔄 In Progress |
-| 🔷 4 | C# & .NET Core Back-End | ⏳ Upcoming |
-| 🔷 5 | SQL Server & EF Core | ⏳ Upcoming |
+| 🔷 3 | JavaScript | ✅ Completed |
+| 🔷 4 | C# & .NET Core Back-End | 🔄 In Progress |
+| 🔷 5 | SQL Server & EF Core | 🔄 In Progress |
 | 🔷 6 | Real-World Full-Stack Project | ⏳ Upcoming |
 
 ---
